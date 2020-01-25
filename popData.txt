@@ -1,10 +1,20 @@
 Iron Man
 Marval
+Vaulted
+$55
 Han Solo
 Starwars
+Vaulted
+$170
 Super Mutant
 Fallout
+Temporarily Unavailable
+$10
 Dogmeat
 Fallout
-Mike
-Stranger Things
+Vaulted
+$15
+Korg Holding Miek
+Thor
+Available
+$31

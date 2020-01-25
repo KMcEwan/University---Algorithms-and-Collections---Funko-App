@@ -14,6 +14,8 @@ hashTable::hashTable()
 	ifstream popData;
 	string name;
 	string tag;
+	string status;
+	string price;
 	popData.open("../popData.txt");
 	if (popData.fail())
 	{
@@ -25,10 +27,14 @@ hashTable::hashTable()
 		/*popData >> name >> tag;
 		addPop(name, tag);*/
 		getline(popData, name);
-		cout << "name :" << name << endl;
+		//cout << "name :" << name << endl;
 		getline(popData, tag);
-		cout << "tag : " << tag << endl;
-		addPop(name, tag);
+		//cout << "tag : " << tag << endl;
+		getline(popData, status);
+		//cout << "name :" << name << endl;
+		getline(popData, price);
+		//cout << "tag : " << tag << endl;
+		addPop(name, tag, status, price);
 	}
 	popData.close();
 
@@ -55,7 +61,7 @@ int hashTable::hash(string name)
 	for (int i = 0; i < name.length(); i++)
 	{
 		hash = hash + (int)name[i];
-		cout << "hash =	" << hash << endl;
+		//cout << "hash =	" << hash << endl;
 	}
 
 	bucket = hash % TABLE_SIZE;
@@ -63,9 +69,9 @@ int hashTable::hash(string name)
 	return bucket;
 }
 
-void hashTable::addPop(string name, string tag)
+void hashTable::addPop(string name, string tag, string status, string price)
 {	
-	hashNode *temp = new hashNode(name, tag);
+	hashNode *temp = new hashNode(name, tag, status, price);
 	int location = hash(name);
 	temp->next = table[location];
 	table[location] = temp;
@@ -78,9 +84,35 @@ void hashTable::printTable()
 	{
 		for (hashNode *p = table[i]; p; p = p->next) {
 			cout << "bucket " << i << " name = " << p->name
-				<< ". tag = " << p->tag << endl;
+				<< ". tag = " << p->tag << " status = " << p->status << ". price = " << p->price <<	endl;
 		}
 	}
 
+}
+
+void hashTable::searchForPop(string passedName)
+{
+	int bucket = hash(passedName);
+	bool foundPop = false;
+	string popName;
+
+	hashNode *Ptr = table[bucket];
+	while (Ptr != NULL)
+	{
+		if (Ptr->name == passedName)
+		{
+			foundPop = true;
+			popName = Ptr->name;
+		}
+		Ptr = Ptr->next;
+	}
+	if (foundPop == true)
+	{
+		cout << " pop found" << Ptr->name << Ptr->tag << Ptr->status << Ptr->price << endl;
+	}
+	else
+	{
+		cout << passedName << " not found	" << endl;
+	}
 }
 
