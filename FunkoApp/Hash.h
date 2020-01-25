@@ -1,6 +1,7 @@
 #pragma once
 #include <list>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -8,41 +9,17 @@ class hashNode
 {
 	public:
 		string name;
-		string type;
+		string tag;
 		hashNode *next;
 	
-		hashNode(string name, string type)
+		hashNode(string name, string tag)
 		{
 			this->name = name;
-			this->type = type;
+			this->tag = tag;
 			next = NULL;
 		}
 
-		string getName() 
-		{
-			return name;
-		}
-
-		string getType() 
-		{
-			return type;
-		}
-
-		void setType(string type)
-		{
-			this->type = type;
-		}
-
-		hashNode *getNext()
-		{
-			return next;
-		}
-			
-		void setNext(hashNode *next)
-		{
-			this->next = next;
-		}
-
+		
 };
 
 class hashTable
@@ -56,7 +33,7 @@ class hashTable
 		~hashTable();
 
 		int hash(string name);
-		void addPop(string name, string type);
+		void addPop(string name, string tag);
 		void printTable();
 
 

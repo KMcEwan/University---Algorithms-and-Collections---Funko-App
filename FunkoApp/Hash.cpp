@@ -10,6 +10,28 @@ hashTable::hashTable()
 	{
 		table[i] = NULL;
 	}
+		
+	ifstream popData;
+	string name;
+	string tag;
+	popData.open("../popData.txt");
+	if (popData.fail())
+	{
+		cout << "File failed" << endl;
+		exit(1);
+	}	
+	while (!popData.eof())
+	{		
+		/*popData >> name >> tag;
+		addPop(name, tag);*/
+		getline(popData, name);
+		cout << "name :" << name << endl;
+		getline(popData, tag);
+		cout << "tag : " << tag << endl;
+		addPop(name, tag);
+	}
+	popData.close();
+
 }
 
 hashTable::~hashTable()
@@ -41,9 +63,9 @@ int hashTable::hash(string name)
 	return bucket;
 }
 
-void hashTable::addPop(string name, string type)
+void hashTable::addPop(string name, string tag)
 {	
-	hashNode *temp = new hashNode(name, type);
+	hashNode *temp = new hashNode(name, tag);
 	int location = hash(name);
 	temp->next = table[location];
 	table[location] = temp;
@@ -56,7 +78,7 @@ void hashTable::printTable()
 	{
 		for (hashNode *p = table[i]; p; p = p->next) {
 			cout << "bucket " << i << " name = " << p->name
-				<< ". type = " << p->type << endl;
+				<< ". tag = " << p->tag << endl;
 		}
 	}
 
