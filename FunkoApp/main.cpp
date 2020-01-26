@@ -1,5 +1,6 @@
 #include <iostream>
 #include "hash.h"
+#include <algorithm>
 
 
 using namespace std;
@@ -20,6 +21,12 @@ int main()
 	{
 		cout << "search for ";
 		getline(cin, name);
+
+		for_each(name.begin(), name.end(), [](char & c) {
+			c = ::toupper(c);
+		});
+
+
 		if (name != "exit")
 		{
 			hash.searchForPop(name);

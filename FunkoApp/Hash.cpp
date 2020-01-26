@@ -95,6 +95,9 @@ void hashTable::searchForPop(string passedName)
 	int bucket = hash(passedName);
 	bool foundPop = false;
 	string popName;
+	string popTags;
+	string popStatus;
+	string popPrice;
 
 	hashNode *Ptr = table[bucket];
 	while (Ptr != NULL)
@@ -103,12 +106,16 @@ void hashTable::searchForPop(string passedName)
 		{
 			foundPop = true;
 			popName = Ptr->name;
+			popTags = Ptr->tag;
+			popStatus = Ptr->status;
+			popPrice = Ptr->price;
 		}
 		Ptr = Ptr->next;
 	}
 	if (foundPop == true)
 	{
-		cout << " pop found" << Ptr->name << Ptr->tag << Ptr->status << Ptr->price << endl;
+		cout << " pop found" << endl; // << Ptr->name << Ptr->tag << Ptr->status << Ptr->price << endl;
+		cout << "Name : " << popName << " Tags : " << popTags << " Status : " << popStatus << " Price : " << popPrice << endl;
 	}
 	else
 	{

@@ -1,5 +1,5 @@
 ﻿  Hash.cpp
-e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\funkoapp\funkoapp\hash.cpp(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\hash.cpp(61): warning C4018: '<': signed/unsigned mismatch
   main.cpp
   Generating Code...
-  FunkoApp.vcxproj -> E:\users\k_mce\Uni\3rd year\AlgorithmsAndCollections\CourseWork\FunkoApp\Debug\FunkoApp.exe
+  FunkoApp.vcxproj -> C:\Users\k_mce\Documents\Uni\3rd Year\AlgorithmsAndCollections\CourseWork\University---Algorithms-and-Collections---Funko-App\Debug\FunkoApp.exe
