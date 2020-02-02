@@ -10,12 +10,13 @@ int main()
 	hashTable hash;
 	//hash.printTable();
 	string name ="";
+	string tag = "";
 	//hash.addPop("IronMan", "Marvel");
 	//hash.addPop("IronaMn", "Marvel");
 	//hash.addPop("Han Solo", "Star Wars");
 	//hash.addPop("Dogmeat", "Fallout");
 
-	//hash.printTable();
+	hash.printTable();
 
 	while (name != "exit")
 	{
@@ -32,6 +33,23 @@ int main()
 			hash.searchForPop(name);
 		}
 	}
+
+
+	//while (tag != "exit")
+	//{
+	//	cout << "search for ";
+	//	getline(cin, tag);
+
+	//	for_each(tag.begin(), tag.end(), [](char & c) {
+	//		c = ::toupper(c);
+	//	});
+
+
+	//	if (tag != "exit")
+	//	{
+	//		hash.searchByTag(tag);
+	//	}
+	//}
 
 	system("pause");
 

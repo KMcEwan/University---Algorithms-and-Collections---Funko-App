@@ -93,13 +93,32 @@ void hashTable::printTable()
 void hashTable::searchForPop(string passedName)
 {
 	int bucket = hash(passedName);
-	bool foundPop = false;
+
+	//for (int i = 0; i < TABLE_SIZE; i++)
+	//{
+		for (hashNode *p = table[bucket]; p; p = p->next)
+		{
+			if (passedName == p->name)
+			{
+				cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
+			}
+		}
+//	}
+
+
+
+
+
+
+
+
+	/*bool foundPop = false;
 	string popName;
 	string popTags;
 	string popStatus;
 	string popPrice;
 
-	hashNode *Ptr = table[bucket];
+	hashNode *Ptr = table[bucket]; 
 	while (Ptr != NULL)
 	{
 		if (Ptr->name == passedName)
@@ -114,12 +133,29 @@ void hashTable::searchForPop(string passedName)
 	}
 	if (foundPop == true)
 	{
-		cout << " pop found" << endl; // << Ptr->name << Ptr->tag << Ptr->status << Ptr->price << endl;
+		cout << " pop found" << endl; 
 		cout << "Name : " << popName << " Tags : " << popTags << " Status : " << popStatus << " Price : " << popPrice << endl;
 	}
 	else
 	{
 		cout << passedName << " not found	" << endl;
-	}
+	}*/
 }
+//
+//void hashTable::searchByTag(string tag)
+//{
+//	//int bucket = hash(tag);
+//
+//	for (int i = 0; i < TABLE_SIZE; i++)
+//	{
+//		for (hashNode *p = table[i]; p; p = p->next)
+//		{
+//			if (tag == p->tag)
+//			{
+//				cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
+//			}
+//		}
+//	}
+//}
+
 
