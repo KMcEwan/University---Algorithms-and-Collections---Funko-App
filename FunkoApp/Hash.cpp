@@ -60,8 +60,7 @@ int hashTable::hash(string name)
 
 	for (int i = 0; i < name.length(); i++)
 	{
-		hash = hash + (int)name[i];
-		//cout << "hash =	" << hash << endl;
+		hash = hash + (int)name[i];		
 	}
 
 	bucket = hash % TABLE_SIZE;
@@ -83,8 +82,7 @@ void hashTable::printTable()
 	for (int i = 0; i < TABLE_SIZE; i++)
 	{
 		for (hashNode *p = table[i]; p; p = p->next) {
-			cout << "bucket " << i << " name = " << p->name
-				<< ". tag = " << p->tag << " status = " << p->status << ". price = " << p->price <<	endl;
+			cout << "Name = " << p->name << "\n" << "Tag = " << p->tag << "\n" << "Status = " << p->status << "\n" << "Price = " << p->price << "\n\n";
 		}
 	}
 
@@ -98,34 +96,34 @@ void hashTable::searchForPop(string passedName)
 	{
 		if (passedName == p->name)
 		{
-			cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
+			cout << "name : " << p->name << "\n" <<"Tag : " << p->tag << "\n" <<  "Status : " << p->status << "\n" << "Price : " << p->price << "\n\n";
 		}
 	}
 }
 
 void hashTable::searchByTag(string tag)
-{
-	//int bucket = hash(tag);
+{	
 
 	for (int i = 0; i < TABLE_SIZE; i++)
 	{  
 		for (hashNode *p = table[i]; p; p = p->next)
 		{
-			/*if (tag == p->tag)
-			{
-				cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
-			}*/
-
-			/*if (!p->tag.find(tag))
-			{
-				cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
-			}*/
-
 			size_t found = p->tag.find(tag);
 			if (found != string::npos)
 			{
-				cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
+				cout << "name : " << p->name << "\n" << "Tag : " << p->tag << "\n" << "Status : " << p->status << "\n" << "Price : " << p->price << "\n\n";
 			}
+		}
+	}
+}
+
+void hashTable::showBuckets()
+{
+	for (int i = 0; i < TABLE_SIZE; i++)
+	{
+		for (hashNode *p = table[i]; p; p = p->next) {
+			cout << "bucket " << i << " name = " << p->name
+				<< ". tag = " << p->tag << " status = " << p->status << ". price = " << p->price << endl;
 		}
 	}
 }

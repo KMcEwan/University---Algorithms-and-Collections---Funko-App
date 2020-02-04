@@ -41,5 +41,6 @@ class hashTable
 		void printTable();
 		void searchForPop(string name);
 		void searchByTag(string tag);
+		void showBuckets();
 		
 };
