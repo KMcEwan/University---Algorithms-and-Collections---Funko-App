@@ -1,24 +1,24 @@
 IRON MAN
-Marval
-Vaulted
+MARVEL IRON MAN
+VAULTED
 $55
-Han Solo
-Starwars
-Vaulted
+HAN SOLO
+STAR WARS
+VAULTED
 $170
-Super Mutant
-Fallout
-Temporarily Unavailable
+SUPER MUTANT
+FALLOUT
+TEMPORARILY UNAVAILABLE
 $10
-Dogmeat
-Fallout
-Vaulted
+DOGMEAT
+FALLOUT
+VAULTED
 $15
-Korg Holding Miek
-Thor
-Available
+KORG HOLDING MIEK
+THOR MARVEL
+AVAILABLE
 $31
 IRON MAN
-MARVEL 
+MARVEL IRON MAN
 AVAILABLE
 $20

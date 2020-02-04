@@ -40,6 +40,6 @@ class hashTable
 		void addPop(string name, string tag, string status, string price);
 		void printTable();
 		void searchForPop(string name);
-	//	void searchByTag(string tag);
+		void searchByTag(string tag);
 		
 };

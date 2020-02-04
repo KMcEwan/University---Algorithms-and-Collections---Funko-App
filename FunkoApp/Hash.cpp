@@ -93,69 +93,39 @@ void hashTable::printTable()
 void hashTable::searchForPop(string passedName)
 {
 	int bucket = hash(passedName);
-
-	//for (int i = 0; i < TABLE_SIZE; i++)
-	//{
-		for (hashNode *p = table[bucket]; p; p = p->next)
+	
+	for (hashNode *p = table[bucket]; p; p = p->next)
+	{
+		if (passedName == p->name)
 		{
-			if (passedName == p->name)
+			cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
+		}
+	}
+}
+
+void hashTable::searchByTag(string tag)
+{
+	//int bucket = hash(tag);
+
+	for (int i = 0; i < TABLE_SIZE; i++)
+	{  
+		for (hashNode *p = table[i]; p; p = p->next)
+		{
+			/*if (tag == p->tag)
+			{
+				cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
+			}*/
+
+			/*if (!p->tag.find(tag))
+			{
+				cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
+			}*/
+
+			size_t found = p->tag.find(tag);
+			if (found != string::npos)
 			{
 				cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
 			}
 		}
-//	}
-
-
-
-
-
-
-
-
-	/*bool foundPop = false;
-	string popName;
-	string popTags;
-	string popStatus;
-	string popPrice;
-
-	hashNode *Ptr = table[bucket]; 
-	while (Ptr != NULL)
-	{
-		if (Ptr->name == passedName)
-		{
-			foundPop = true;
-			popName = Ptr->name;
-			popTags = Ptr->tag;
-			popStatus = Ptr->status;
-			popPrice = Ptr->price;
-		}
-		Ptr = Ptr->next;
 	}
-	if (foundPop == true)
-	{
-		cout << " pop found" << endl; 
-		cout << "Name : " << popName << " Tags : " << popTags << " Status : " << popStatus << " Price : " << popPrice << endl;
-	}
-	else
-	{
-		cout << passedName << " not found	" << endl;
-	}*/
 }
-//
-//void hashTable::searchByTag(string tag)
-//{
-//	//int bucket = hash(tag);
-//
-//	for (int i = 0; i < TABLE_SIZE; i++)
-//	{
-//		for (hashNode *p = table[i]; p; p = p->next)
-//		{
-//			if (tag == p->tag)
-//			{
-//				cout << "name : " << p->name << " Tag : " << p->tag << " Status : " << p->status << " Price : " << p->price << "\n";
-//			}
-//		}
-//	}
-//}
-
-
