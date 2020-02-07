@@ -18,38 +18,38 @@ int main()
 
 	hash.printTable();
 
-	//while (name != "exit")
-	//{
-	//	cout << "search for ";
-	//	getline(cin, name);
-
-	//	for_each(name.begin(), name.end(), [](char & c) {
-	//		c = ::toupper(c);
-	//	});
-
-
-	//	if (name != "exit")
-	//	{
-	//		hash.searchForPop(name);
-	//	}
-	//}
-
-
-	while (tag != "exit")
+	while (name != "exit")
 	{
 		cout << "search for ";
-		getline(cin, tag);
+		getline(cin, name);
 
-		for_each(tag.begin(), tag.end(), [](char & c) {
+		for_each(name.begin(), name.end(), [](char & c) {
 			c = ::toupper(c);
 		});
 
 
-		if (tag != "exit")
+		if (name != "exit")
 		{
-			hash.searchByTag(tag);
+			hash.searchForPop(name);
 		}
 	}
+
+
+	//while (tag != "exit")
+	//{
+	//	cout << "search for ";
+	//	getline(cin, tag);
+
+	//	for_each(tag.begin(), tag.end(), [](char & c) {
+	//		c = ::toupper(c);
+	//	});
+
+
+	//	if (tag != "exit")
+	//	{
+	//		hash.searchByTag(tag);
+	//	}
+	//}
 
 	system("pause");
 

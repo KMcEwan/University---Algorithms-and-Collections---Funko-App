@@ -13,6 +13,8 @@ hashTable::hashTable()
 		
 	ifstream popData;
 	string name;
+	string nameDesc;
+	string number;
 	string tag;
 	string status;
 	string price;
@@ -28,13 +30,17 @@ hashTable::hashTable()
 		addPop(name, tag);*/
 		getline(popData, name);
 		//cout << "name :" << name << endl;
+		getline(popData, nameDesc);
+		//cout << "Desc :" << nameDesc << endl;
+		getline(popData, number);
+		//cout << "number :" << number << endl;
 		getline(popData, tag);
 		//cout << "tag : " << tag << endl;
 		getline(popData, status);
 		//cout << "name :" << name << endl;
 		getline(popData, price);
 		//cout << "tag : " << tag << endl;
-		addPop(name, tag, status, price);
+		addPop(name, nameDesc, number, tag, status, price);
 	}
 	popData.close();
 
@@ -68,9 +74,9 @@ int hashTable::hash(string name)
 	return bucket;
 }
 
-void hashTable::addPop(string name, string tag, string status, string price)
+void hashTable::addPop(string name, string nameDesc, string number, string tag, string status, string price)
 {	
-	hashNode *temp = new hashNode(name, tag, status, price);
+	hashNode *temp = new hashNode(name, nameDesc, number, tag, status, price);
 	int location = hash(name);
 	temp->next = table[location];
 	table[location] = temp;
@@ -82,7 +88,7 @@ void hashTable::printTable()
 	for (int i = 0; i < TABLE_SIZE; i++)
 	{
 		for (hashNode *p = table[i]; p; p = p->next) {
-			cout << "Name = " << p->name << "\n" << "Tag = " << p->tag << "\n" << "Status = " << p->status << "\n" << "Price = " << p->price << "\n\n";
+			cout << "Name = " << p->name  << " " << p->nameDesc <<"\n" << "Number = " << p->number << "\n" << "Tag = " << p->tag << "\n" << "Status = " << p->status << "\n" << "Price = " << p->price << "\n\n";
 		}
 	}
 
@@ -96,7 +102,7 @@ void hashTable::searchForPop(string passedName)
 	{
 		if (passedName == p->name)
 		{
-			cout << "name : " << p->name << "\n" <<"Tag : " << p->tag << "\n" <<  "Status : " << p->status << "\n" << "Price : " << p->price << "\n\n";
+			cout << "Name = " << p->name << " " << p->nameDesc <<"\n"<< "Number = " << p->number <<"\n"<< "Tag = " << p->tag << "\n" << "Status = " << p->status << "\n" << "Price = " << p->price << "\n\n";
 		}
 	}
 }
@@ -111,7 +117,7 @@ void hashTable::searchByTag(string tag)
 			size_t found = p->tag.find(tag);
 			if (found != string::npos)
 			{
-				cout << "name : " << p->name << "\n" << "Tag : " << p->tag << "\n" << "Status : " << p->status << "\n" << "Price : " << p->price << "\n\n";
+				cout << "Name = " << p->name << " " << p->nameDesc <<"\n"<< "Number = " << p->number << "\n" << "Tag = " << p->tag << "\n" << "Status = " << p->status << "\n" << "Price = " << p->price << "\n\n";
 			}
 		}
 	}
@@ -122,7 +128,7 @@ void hashTable::showBuckets()
 	for (int i = 0; i < TABLE_SIZE; i++)
 	{
 		for (hashNode *p = table[i]; p; p = p->next) {
-			cout << "bucket " << i << " name = " << p->name
+			cout << "bucket " << i << " name = " << p->name << " " << p->nameDesc << "Number" << p->number
 				<< ". tag = " << p->tag << " status = " << p->status << ". price = " << p->price << endl;
 		}
 	}
