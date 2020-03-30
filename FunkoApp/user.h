@@ -21,5 +21,6 @@ public:
 
 	void searchPopByName(hashTable& hash);
 	void searchPopByTag(hashTable& hash);
+	void printAllTable(hashTable& hash);
 };
 #endif // !USER_H

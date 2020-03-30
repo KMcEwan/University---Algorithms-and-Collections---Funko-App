@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class hashNode
+class  hashNode
 {
 	public:
 		string name;
@@ -28,7 +28,8 @@ class hashNode
 
 			next = NULL;
 		}		
-};
+		
+}; 
 
 class hashTable
 {
@@ -36,7 +37,7 @@ class hashTable
 		hashNode **table;
 
 	public:
-		const int TABLE_SIZE = 10;
+		const int TABLE_SIZE = 30;
 		hashTable();
 		~hashTable();
 
@@ -45,6 +46,5 @@ class hashTable
 		void printTable();
 		void searchForPop(string name);
 		void searchByTag(string tag);
-		void showBuckets();
-		
+		void showBuckets();				
 };

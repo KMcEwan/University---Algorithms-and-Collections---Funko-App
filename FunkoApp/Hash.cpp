@@ -26,24 +26,16 @@ hashTable::hashTable()
 	}	
 	while (!popData.eof())
 	{		
-		/*popData >> name >> tag;
-		addPop(name, tag);*/
-		getline(popData, name);
-		//cout << "name :" << name << endl;
+		getline(popData, name);		
 		getline(popData, nameDesc);
-		//cout << "Desc :" << nameDesc << endl;
 		getline(popData, number);
-		//cout << "number :" << number << endl;
 		getline(popData, tag);
-		//cout << "tag : " << tag << endl;
 		getline(popData, status);
-		//cout << "name :" << name << endl;
 		getline(popData, price);
-		//cout << "tag : " << tag << endl;
 		addPop(name, nameDesc, number, tag, status, price);
 	}
-	popData.close();
-
+	popData.close();	
+	showBuckets();
 }
 
 hashTable::~hashTable()
@@ -58,7 +50,6 @@ hashTable::~hashTable()
 }
 
 
-
 int hashTable::hash(string name)
 {
 	int hash = 0;
@@ -66,12 +57,13 @@ int hashTable::hash(string name)
 
 	for (int i = 0; i < name.length(); i++)
 	{
-		hash = hash + (int)name[i];		
+		hash = hash + (int)name[i] + hash/2;		 
 	}
-
+	
 	bucket = hash % TABLE_SIZE;
 
 	return bucket;
+
 }
 
 void hashTable::addPop(string name, string nameDesc, string number, string tag, string status, string price)
@@ -79,7 +71,7 @@ void hashTable::addPop(string name, string nameDesc, string number, string tag, 
 	hashNode *temp = new hashNode(name, nameDesc, number, tag, status, price);
 	int location = hash(name);
 	temp->next = table[location];
-	table[location] = temp;
+	table[location] = temp;	
 
 }
 
@@ -102,7 +94,7 @@ void hashTable::searchForPop(string passedName)
 	{
 		if (passedName == p->name)
 		{
-			cout << "Name = " << p->name << " " << p->nameDesc <<"\n"<< "Number = " << p->number <<"\n"<< "Tag = " << p->tag << "\n" << "Status = " << p->status << "\n" << "Price = " << p->price << "\n\n";
+			cout << "Name = " << p->name << " " << p->nameDesc <<"\n"<< "Number = " << p->number <<"\n"<< "Tag = " << p->tag << "\n" << "Status = " << p->status << "\n" << "Price = " << p->price <<"\n\n";
 		}
 	}
 }
@@ -128,8 +120,12 @@ void hashTable::showBuckets()
 	for (int i = 0; i < TABLE_SIZE; i++)
 	{
 		for (hashNode *p = table[i]; p; p = p->next) {
-			cout << "bucket " << i << " name = " << p->name << " " << p->nameDesc << "Number" << p->number
+			cout << "bucket " << i << " name = " << p->name << " " << p->nameDesc << "Number " << p->number
 				<< ". tag = " << p->tag << " status = " << p->status << ". price = " << p->price << endl;
 		}
 	}
 }
+
+
+
+
