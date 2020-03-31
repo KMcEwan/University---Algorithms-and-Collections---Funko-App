@@ -8,47 +8,74 @@
 using namespace std;
 
 
-void menuSelection(user user1, hashTable hash);
+void menuSelection(user userSystem, hashTable hash, loginManager loginSystem);
 
 int main()
 {
-	/*hashTable hash;
-	user user1;
-	
-	menuSelection(user1, hash);
-	system("pause");*/
+	hashTable hash;
+	user userSystem;
+	loginManager loginSystem;
+	menuSelection(userSystem, hash, loginSystem);
+	system("pause");
 
-	loginManager login;
 
-	login.createUser();
-	login.login();
 	system("pause");
 }
-void menuSelection(user user1, hashTable hash)
+void menuSelection(user userSystem, hashTable hash, loginManager loginSystem)
 {
 	
 	int i;
-	cout << "1: View all pops\n";
-	cout << "2: Search for pops by name\n";
-	cout << "3: Search for pops by tags\n";
+	cout << "1: Create an account\n";
+	cout << "2: Login\n";
+	cout << "3: Show all pops\n";
+	cout << "4: Search for pops by name\n";
+	cout << "5: Search for pops by tags\n";
+	cout << "6: Logout\n";
 	cin >> i;
 	switch (i)
 	{
 	case 1:
-		user1.printAllTable(hash);
-		menuSelection(user1, hash);
+		cin.clear();
+		cin.ignore(9999, '\n');
+		loginSystem.createUser();
+		menuSelection(userSystem, hash, loginSystem);
 		break;
 	case 2:
-		user1.searchPopByName(hash);
-		menuSelection(user1, hash);;
+		cin.clear();
+		cin.ignore(9999, '\n');
+		loginSystem.login();
+		menuSelection(userSystem, hash, loginSystem);
 		break;
 	case 3:
-		user1.searchPopByTag(hash);
-		menuSelection(user1, hash);
+		cin.clear();
+		cin.ignore(9999, '\n');
+		userSystem.printAllTable(hash);
+		menuSelection(userSystem, hash, loginSystem);
 		break;
-	default:
+	case 4:
+		cin.clear();
+		cin.ignore(9999, '\n');
+		userSystem.searchPopByName(hash);
+		menuSelection(userSystem, hash, loginSystem);;
+		break;
+	case 5:
+		cin.clear();
+		cin.ignore(9999, '\n');
+		userSystem.searchPopByTag(hash);
+		menuSelection(userSystem, hash, loginSystem);
+		break;
+	case 6:
+		loginSystem.logout();
+		menuSelection(userSystem, hash, loginSystem);
+		break;
+	default:		
+		//if (cin.eof())
+			//return;
 		cout << "Invalid selection\n";
-		menuSelection(user1, hash);
+		cin.clear();
+		cin.ignore(9999, '\n');
+		menuSelection(userSystem, hash, loginSystem);
 		break;
 	}
 };
+

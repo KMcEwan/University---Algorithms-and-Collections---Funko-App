@@ -11,7 +11,7 @@ class loginManager
 public:
 	loginManager()
 	{
-		accessGranted = 0;
+		loggedIn = 0;
 	}
 
 	void login();
@@ -21,9 +21,10 @@ public:
 	int checkFile(string userNameEntry, const char* fileName);
 	long long encrypted(int letter);
 	int decrypted(long long letter);
+	void logout();
 
 private:
 	string userName_Attempted;
 	string password_Attempted;
-	bool accessGranted;
+	bool loggedIn;
 };

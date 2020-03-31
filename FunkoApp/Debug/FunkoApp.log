@@ -1,7 +1,3 @@
-﻿  loginManager.cpp
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\loginmanager.cpp(62): warning C4018: '<': signed/unsigned mismatch
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\loginmanager.cpp(143): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\loginmanager.cpp(143): warning C4244: 'return': conversion from 'float' to '__int64', possible loss of data
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\loginmanager.cpp(148): warning C4244: 'argument': conversion from '__int64' to 'float', possible loss of data
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\loginmanager.cpp(148): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+﻿  main.cpp
+c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\main.cpp(80): warning C4717: 'menuSelection': recursive on all control paths, function will cause runtime stack overflow
   FunkoApp.vcxproj -> C:\Users\k_mce\Documents\Uni\3rd Year\AlgorithmsAndCollections\CourseWork\University---Algorithms-and-Collections---Funko-App\Debug\FunkoApp.exe

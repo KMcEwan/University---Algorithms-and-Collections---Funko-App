@@ -2,32 +2,41 @@
 
 void loginManager::login()
 {
-	cout << "Please enter your username and password\n";
-	cout << "Username: \n";
-	cin >> userName_Attempted;
-	cout << "Password: \n";
-	cin	>> password_Attempted;
-
-	int userNameID = checkFile(userName_Attempted, "../userNameDatabase.txt");
-
-	if (userNameID != 0)
+	if (loggedIn == false)
 	{
-		int passwordID = checkFile(password_Attempted, "../passwordDatabase.txt");
-		if (userNameID == passwordID)
-		{			
-			cout << "Welcome " << userName_Attempted << "\n";
+		cout << "Please enter your username and password\n";
+		cout << "Username: ";
+		cin >> userName_Attempted;
+		cout << "Password: ";
+		cin >> password_Attempted;
+
+		int userNameID = checkFile(userName_Attempted, "../userNameDatabase.txt");
+
+		if (userNameID != 0)
+		{
+			int passwordID = checkFile(password_Attempted, "../passwordDatabase.txt");
+			if (userNameID == passwordID)
+			{
+				cout << "Welcome " << userName_Attempted << "\n";
+				loggedIn = true;
+			}
+			else
+			{
+				cout << "Invalid login, please try again\n";
+				login();
+			}
 		}
 		else
 		{
-			cout << "Invalid login, please try again\n";
+			cout << "Invalid username, please try again\n";
 			login();
 		}
 	}
 	else
 	{
-		cout << "Invalid username, please try again\n";	
-		login();
+		cout << "You are already logged in " << userName_Attempted << "\n\n";
 	}
+	
 }
 
 void loginManager::createUser()
@@ -146,6 +155,12 @@ long long loginManager::encrypted(int letter)
 int loginManager::decrypted(long long letter)
 {
 	return powf((letter + 14) / 4, 1 / 5.0f);
+}
+
+void loginManager::logout()
+{
+	loggedIn = false;
+	userName_Attempted == "";
 }
 
 

@@ -117,12 +117,14 @@
   <ItemGroup>
     <ClInclude Include="Hash.h" />
     <ClInclude Include="loginManager.h" />
+    <ClInclude Include="registeredUser.h" />
     <ClInclude Include="user.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="loginManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="registeredUser.cpp" />
     <ClCompile Include="user.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

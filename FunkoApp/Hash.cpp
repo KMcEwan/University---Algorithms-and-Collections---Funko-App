@@ -35,7 +35,6 @@ hashTable::hashTable()
 		addPop(name, nameDesc, number, tag, status, price);
 	}
 	popData.close();	
-	showBuckets();
 }
 
 hashTable::~hashTable()
