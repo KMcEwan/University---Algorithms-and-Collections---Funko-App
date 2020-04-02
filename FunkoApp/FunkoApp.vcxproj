@@ -115,12 +115,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="encryptionCheckFile.h" />
+    <ClInclude Include="guestUser.h" />
     <ClInclude Include="Hash.h" />
     <ClInclude Include="loginManager.h" />
     <ClInclude Include="registeredUser.h" />
     <ClInclude Include="user.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="encryptionCheckFile.cpp" />
+    <ClCompile Include="guestUser.cpp" />
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="loginManager.cpp" />
     <ClCompile Include="main.cpp" />
