@@ -8,7 +8,7 @@ using namespace std;
 
 void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, registeredUser regUser);
 void guestMenu(user userSystem, hashTable hash);
-void createAccount(guestUser guestSystem);
+void createAccount(guestUser guestSystem, registeredUser regUser);
 void login(registeredUser regUser);
 
 int main()
@@ -41,7 +41,7 @@ void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, regis
 	case 2:
 		cin.clear();
 		cin.ignore(9999, '\n');
-		createAccount(guestSystem);
+		createAccount(guestSystem, regUser);
 		break;
 
 	case 3:
@@ -87,10 +87,10 @@ void guestMenu(user userSystem, hashTable hash)
 	}
 }
 
-void createAccount(guestUser guestSystem)
+void createAccount(guestUser guestSystem, registeredUser regUser)
 {
 	guestSystem.createAccount();	
-	
+	regUser.login();
 }
 
 void login(registeredUser regUser)

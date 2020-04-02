@@ -16,6 +16,8 @@ void guestUser::createAccount()
 	int id = 1 + getID();
 	saveFile(userName, "../userNameDatabase.txt", id);
 	saveFile(password, "../passwordDatabase.txt", id);
+
+	cout << "Account created\n.";
 }
 
 void guestUser::saveFile(string line, const char * fileName, const int & id)

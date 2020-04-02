@@ -1,19 +1,6 @@
-﻿  encryptionCheckFile.cpp
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptioncheckfile.cpp(6): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptioncheckfile.cpp(6): warning C4244: 'return': conversion from 'float' to '__int64', possible loss of data
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptioncheckfile.cpp(11): warning C4244: 'argument': conversion from '__int64' to 'float', possible loss of data
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptioncheckfile.cpp(11): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-  guestUser.cpp
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\guestuser.cpp(32): warning C4018: '<': signed/unsigned mismatch
-  Hash.cpp
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\hash.cpp(57): warning C4018: '<': signed/unsigned mismatch
-  loginManager.cpp
+﻿  guestUser.cpp
+c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\guestuser.cpp(34): warning C4018: '<': signed/unsigned mismatch
   main.cpp
   registeredUser.cpp
-  user.cpp
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(35): warning C4553: '==': result of expression not used; did you intend '='?
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(39): warning C4553: '==': result of expression not used; did you intend '='?
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(79): warning C4553: '==': result of expression not used; did you intend '='?
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(83): warning C4553: '==': result of expression not used; did you intend '='?
   Generating Code...
   FunkoApp.vcxproj -> C:\Users\k_mce\Documents\Uni\3rd Year\AlgorithmsAndCollections\CourseWork\University---Algorithms-and-Collections---Funko-App\Debug\FunkoApp.exe
