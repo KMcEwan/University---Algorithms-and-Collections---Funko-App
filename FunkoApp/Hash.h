@@ -37,11 +37,11 @@ class hashTable
 		hashNode **table;
 
 	public:
-		const int TABLE_SIZE = 30;
+		const int TABLE_SIZE = 32;
 		hashTable();
 		~hashTable();
 
-		int hash(string name);
+		int hashfunction(string name);
 		void addPop(string name, string nameDesc, string number, string tag, string status, string price);
 		void printTable();
 		void searchForPop(string name);

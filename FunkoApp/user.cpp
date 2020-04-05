@@ -1,18 +1,15 @@
 #include "user.h"
 
-user::user()
-{
-	cout << "Welcome User" << endl;
-}
-
 void user::searchPopByName(hashTable& hash)
-{
+{	
 	string name = "";
 	bool searchAgainName = true;
 	while (searchAgainName == true)
-	{
+	{		
+		//cin.clear();
 		cin.ignore();
-		cout << "search for ";
+		cout << "Enter a pops name to search for ";
+		
 		getline(cin, name);
 
 		for_each(name.begin(), name.end(), [](char & c) {
@@ -28,6 +25,7 @@ void user::searchPopByName(hashTable& hash)
 		cout << "Search again? Y / N \n";
 		char searchInputName;
 		cin >> searchInputName;
+		cout << "\n";
 		searchInputName = toupper(searchInputName);
 
 		if (searchInputName == 'Y')
@@ -55,8 +53,9 @@ void user::searchPopByTag(hashTable& hash)
 	
 	while (searchAgainTag == true)
 	{
-		cin.ignore();
-		cout << "search for ";
+		
+		cout << "Enter a tag to search for ";
+		cin.ignore(9999, '/n');
 		getline(cin, tag);
 		
 		for_each(tag.begin(), tag.end(), [](char & c) {
@@ -72,6 +71,7 @@ void user::searchPopByTag(hashTable& hash)
 		cout << "Search again? Y / N \n";
 		char searchInputTag;
 		cin >> searchInputTag;
+		cout << "\n";
 		searchInputTag = toupper(searchInputTag);
 
 		if (searchInputTag == 'Y')
@@ -93,5 +93,6 @@ void user::searchPopByTag(hashTable& hash)
 
 void user::printAllTable(hashTable & hash)
 {
+	cout << "\n";
 	hash.printTable();
 }

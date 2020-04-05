@@ -49,17 +49,17 @@ hashTable::~hashTable()
 }
 
 
-int hashTable::hash(string name)
+int hashTable::hashfunction(string name)
 {
-	int hash = 0;
+	int hashfunction = 0;
 	int bucket;
 
 	for (int i = 0; i < name.length(); i++)
 	{
-		hash = hash + (int)name[i] + hash/2;		 
+		hashfunction = hashfunction + (int)name[i] + hashfunction /2;
 	}
 	
-	bucket = hash % TABLE_SIZE;
+	bucket = hashfunction % TABLE_SIZE;
 
 	return bucket;
 
@@ -68,7 +68,7 @@ int hashTable::hash(string name)
 void hashTable::addPop(string name, string nameDesc, string number, string tag, string status, string price)
 {	
 	hashNode *temp = new hashNode(name, nameDesc, number, tag, status, price);
-	int location = hash(name);
+	int location = hashfunction(name);
 	temp->next = table[location];
 	table[location] = temp;	
 
@@ -87,7 +87,7 @@ void hashTable::printTable()
 
 void hashTable::searchForPop(string passedName)
 {
-	int bucket = hash(passedName);
+	int bucket = hashfunction(passedName);
 	
 	for (hashNode *p = table[bucket]; p; p = p->next)
 	{

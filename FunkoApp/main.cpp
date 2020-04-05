@@ -8,8 +8,6 @@ using namespace std;
 
 void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, registeredUser regUser);
 void guestMenu(user userSystem, hashTable hash);
-void createAccount(guestUser guestSystem, registeredUser regUser);
-void login(registeredUser regUser);
 
 int main()
 {
@@ -23,13 +21,15 @@ int main()
 
 void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, registeredUser regUser)
 {
+	cout << "Welcome\n\n";
+
 	int menuSelect;
 	cout << "1: Use as guest\n";
 	cout << "2: Create an account\n";
 	cout << "3: Login\n";
 
 	cin >> menuSelect;
-
+	cout << "\n";
 	switch (menuSelect)
 	{
 	case 1:
@@ -41,13 +41,16 @@ void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, regis
 	case 2:
 		cin.clear();
 		cin.ignore(9999, '\n');
-		createAccount(guestSystem, regUser);
+		guestSystem.createAccount();
+		regUser.login();
+		guestMenu(userSystem, hash);
 		break;
 
 	case 3:
 		cin.clear();
 		cin.ignore(9999, '\n');
-		login(regUser);
+		regUser.login();
+		guestMenu(userSystem, hash);
 		break;
 
 	default:				
@@ -65,6 +68,7 @@ void guestMenu(user userSystem, hashTable hash)
 
 	cout << "1: Search pops by name\n";
 	cout << "2: Seach pops by tags\n";
+	cout << "3: View all pops\n";
 
 	cin >> guestInput;
 
@@ -84,16 +88,18 @@ void guestMenu(user userSystem, hashTable hash)
 		guestMenu(userSystem, hash);
 		break;
 
+	case 3:
+		cin.clear();
+		cin.ignore(9999, '\n');
+		userSystem.printAllTable(hash);
+		guestMenu(userSystem, hash);
+		break;
+	default:
+		cout << "Invalid selection\n";
+		cin.clear();
+		cin.ignore(9999, '\n');
+		guestMenu(userSystem, hash);
+		break;
 	}
 }
 
-void createAccount(guestUser guestSystem, registeredUser regUser)
-{
-	guestSystem.createAccount();	
-	regUser.login();
-}
-
-void login(registeredUser regUser)
-{
-	regUser.login();
-}

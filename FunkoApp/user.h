@@ -16,7 +16,10 @@ private:
 
 public:
 
-	user();
+	user()
+	{
+
+	}
 	//~user();
 
 	void searchPopByName(hashTable& hash);
