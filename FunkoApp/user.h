@@ -13,7 +13,7 @@ class user
 {
 
 private:
-
+//	bool searchAgainTag = true;
 public:
 
 	user()
@@ -25,5 +25,8 @@ public:
 	void searchPopByName(hashTable& hash);
 	void searchPopByTag(hashTable& hash);
 	void printAllTable(hashTable& hash);
+	//bool searchAgain();
+
+	
 };
 #endif // !USER_H

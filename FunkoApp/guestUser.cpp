@@ -7,7 +7,7 @@ void guestUser::createAccount()
 	cin >> userName >> password;
 
 
-	if (checkFile(userName, "../userNameDatabase.txt") != 0)
+	if (parseFile(userName, "../userNameDatabase.txt") != 0)
 	{
 		cout << "That username is not available, please try again\n";
 		return;
@@ -17,7 +17,7 @@ void guestUser::createAccount()
 	saveFile(userName, "../userNameDatabase.txt", id);
 	saveFile(password, "../passwordDatabase.txt", id);
 
-	cout << "Account created\n.";
+	cout << "Account created\n";
 }
 
 void guestUser::saveFile(string line, const char * fileName, const int & id)
@@ -33,7 +33,7 @@ void guestUser::saveFile(string line, const char * fileName, const int & id)
 
 	for (int i = 0; i < line.length(); i++)
 	{
-		file << encrypted(line[i]);
+		file << encrypted(line[i]);																			// encrypted() from encyptionParse.h
 		file << "\n";
 	}
 
@@ -41,6 +41,7 @@ void guestUser::saveFile(string line, const char * fileName, const int & id)
 	file.close();
 }
 
+// returns the user ID that is stored when account created
 int guestUser::getID()
 {
 	fstream file;

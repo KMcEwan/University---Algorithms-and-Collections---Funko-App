@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "user.h"
-#include "encryptionCheckFile.h"
+#include "encryptionParse.h"
 
 using namespace std;
 

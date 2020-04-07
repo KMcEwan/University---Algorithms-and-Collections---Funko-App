@@ -1,13 +1,19 @@
 #include "user.h"
 
 void user::searchPopByName(hashTable& hash)
-{	
+{
 	string name = "";
 	bool searchAgainName = true;
+	char searchInputName = ' ';
+	bool firstCheck = false;
 	while (searchAgainName == true)
-	{		
-		//cin.clear();
-		cin.ignore();
+	{	
+		if(firstCheck == 1)																							// Needed to ignore for first run.  
+		{
+			cin.ignore(9999, '\n');																							
+		}
+		firstCheck = true;
+							
 		cout << "Enter a pops name to search for ";
 		
 		getline(cin, name);
@@ -22,7 +28,7 @@ void user::searchPopByName(hashTable& hash)
 			hash.searchForPop(name);
 		}
 
-		cout << "Search again? Y / N \n";
+		/*cout << "Search again? Y / N " << endl;
 		char searchInputName;
 		cin >> searchInputName;
 		cout << "\n";
@@ -37,12 +43,39 @@ void user::searchPopByName(hashTable& hash)
 			searchAgainName == false;
 			break;
 		}
-		else 
+		else */
 		{			
-			cout << "invalid input try again ";
-			cin >> searchInputName;
-		}
+			//cout << "Invalid input.\n\n";
+			////cin >> searchInputName;
+			//cin.clear();
+			//cin.ignore(9999, '\n');
+			//break;
+			while (searchInputName != 'N' || searchInputName != 'Y')
+			{			
+				cout << "Search again? Y / N " << endl;
+				cin >> searchInputName;
+						
+				cout << "\n";
+				searchInputName = toupper(searchInputName);
 
+				if (searchInputName == 'Y')
+				{
+					searchAgainName = true;		
+					break;
+				}
+				else if (searchInputName == 'N')
+				{
+					searchAgainName = false;
+					break;
+				}
+				else
+				{
+					cout << "Invalid input. ";
+					cin.clear();
+					cin.ignore(9999, '\n');
+				}
+			}
+		}
 	}
 }
 
@@ -50,12 +83,16 @@ void user::searchPopByTag(hashTable& hash)
 {
 	string tag = "";
 	bool searchAgainTag = true;
-	
+	bool firstCheck = false;
 	while (searchAgainTag == true)
 	{
-		
+		if (firstCheck == 1)																							
+		{
+			cin.ignore(9999, '\n');
+		}
+		firstCheck = true;
 		cout << "Enter a tag to search for ";
-		cin.ignore(9999, '/n');
+		
 		getline(cin, tag);
 		
 		for_each(tag.begin(), tag.end(), [](char & c) {
@@ -71,22 +108,25 @@ void user::searchPopByTag(hashTable& hash)
 		cout << "Search again? Y / N \n";
 		char searchInputTag;
 		cin >> searchInputTag;
+		cin.clear();
 		cout << "\n";
 		searchInputTag = toupper(searchInputTag);
 
 		if (searchInputTag == 'Y')
 		{
-			searchAgainTag == true;
+			searchAgainTag = true;
 		}
 		else if (searchInputTag == 'N')
 		{
-			searchAgainTag == false;
+			searchAgainTag = false;
 			break;
 		}
 		else
 		{
-			cout << "invalid input try again ";
-			cin >> searchInputTag;
+			cout << "Invalid input.\n\n";
+			cin.clear();
+			cin.ignore(9999, '\n');
+			break;
 		}
 	}
 }
@@ -96,3 +136,5 @@ void user::printAllTable(hashTable & hash)
 	cout << "\n";
 	hash.printTable();
 }
+
+

@@ -1,13 +1,12 @@
 #include <iostream>
 #include "hash.h"
 #include "user.h"
-#include "loginManager.h"
 #include "guestUser.h"
 
 using namespace std;
 
 void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, registeredUser regUser);
-void guestMenu(user userSystem, hashTable hash);
+void guestMenu(user userSystem, hashTable hash, guestUser guestSystem, registeredUser regUser);
 
 int main()
 {
@@ -35,7 +34,7 @@ void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, regis
 	case 1:
 		cin.clear();
 		cin.ignore(9999, '\n');
-		guestMenu(userSystem, hash);
+		guestMenu(userSystem, hash, guestSystem, regUser);
 		break;
 
 	case 2:
@@ -43,14 +42,14 @@ void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, regis
 		cin.ignore(9999, '\n');
 		guestSystem.createAccount();
 		regUser.login();
-		guestMenu(userSystem, hash);
+		guestMenu(userSystem, hash, guestSystem, regUser);
 		break;
 
 	case 3:
 		cin.clear();
 		cin.ignore(9999, '\n');
 		regUser.login();
-		guestMenu(userSystem, hash);
+		guestMenu(userSystem, hash, guestSystem, regUser);
 		break;
 
 	default:				
@@ -62,13 +61,14 @@ void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, regis
 	}
 };
 
-void guestMenu(user userSystem, hashTable hash)
+void guestMenu(user userSystem, hashTable hash, guestUser guestSystem, registeredUser regUser)
 {
 	int guestInput;
 
 	cout << "1: Search pops by name\n";
 	cout << "2: Seach pops by tags\n";
 	cout << "3: View all pops\n";
+	cout << "4: Main menu\n";
 
 	cin >> guestInput;
 
@@ -78,27 +78,32 @@ void guestMenu(user userSystem, hashTable hash)
 		cin.clear();
 		cin.ignore(9999, '\n');
 		userSystem.searchPopByName(hash);
-		guestMenu(userSystem, hash);
+		guestMenu(userSystem, hash, guestSystem, regUser);
 		break;
 
 	case 2:
 		cin.clear();
 		cin.ignore(9999, '\n');
 		userSystem.searchPopByTag(hash);
-		guestMenu(userSystem, hash);
+		guestMenu(userSystem, hash, guestSystem, regUser);
 		break;
 
 	case 3:
 		cin.clear();
 		cin.ignore(9999, '\n');
 		userSystem.printAllTable(hash);
-		guestMenu(userSystem, hash);
+		guestMenu(userSystem, hash, guestSystem, regUser);
+		break;
+	case 4:
+		cin.clear();
+		cin.ignore(9999, '\n');		
+		menuSelection(userSystem, hash, guestSystem, regUser);
 		break;
 	default:
 		cout << "Invalid selection\n";
 		cin.clear();
 		cin.ignore(9999, '\n');
-		guestMenu(userSystem, hash);
+		guestMenu(userSystem, hash, guestSystem, regUser);
 		break;
 	}
 }

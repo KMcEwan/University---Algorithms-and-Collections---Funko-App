@@ -24,6 +24,7 @@ hashTable::hashTable()
 		cout << "File failed" << endl;
 		exit(1);
 	}	
+
 	while (!popData.eof())
 	{		
 		getline(popData, name);		
@@ -48,7 +49,7 @@ hashTable::~hashTable()
 	delete[] table;
 }
 
-
+// Hashing function to determine the bucket for each of the pops
 int hashTable::hashfunction(string name)
 {
 	int hashfunction = 0;
@@ -56,7 +57,7 @@ int hashTable::hashfunction(string name)
 
 	for (int i = 0; i < name.length(); i++)
 	{
-		hashfunction = hashfunction + (int)name[i] + hashfunction /2;
+		hashfunction = hashfunction + (int)name[i] + hashfunction /2;																
 	}
 	
 	bucket = hashfunction % TABLE_SIZE;
@@ -64,6 +65,7 @@ int hashTable::hashfunction(string name)
 	return bucket;
 
 }
+
 
 void hashTable::addPop(string name, string nameDesc, string number, string tag, string status, string price)
 {	
@@ -85,9 +87,10 @@ void hashTable::printTable()
 
 }
 
+// Search for pop by name function, takes in users input of pops name and output pops data that matches user input. 
 void hashTable::searchForPop(string passedName)
-{
-	int bucket = hashfunction(passedName);
+{	
+	int bucket = hashfunction(passedName);																							// De-hashing to find bucket number
 	
 	for (hashNode *p = table[bucket]; p; p = p->next)
 	{
@@ -114,6 +117,7 @@ void hashTable::searchByTag(string tag)
 	}
 }
 
+// Only for debugging purposes. Prints the pops details and their corresponding buckets
 void hashTable::showBuckets()
 {
 	for (int i = 0; i < TABLE_SIZE; i++)

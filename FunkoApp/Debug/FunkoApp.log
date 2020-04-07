@@ -1,6 +1,2 @@
 ﻿  user.cpp
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(33): warning C4553: '==': result of expression not used; did you intend '='?
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(37): warning C4553: '==': result of expression not used; did you intend '='?
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(79): warning C4553: '==': result of expression not used; did you intend '='?
-c:\users\k_mce\documents\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(83): warning C4553: '==': result of expression not used; did you intend '='?
   FunkoApp.vcxproj -> C:\Users\k_mce\Documents\Uni\3rd Year\AlgorithmsAndCollections\CourseWork\University---Algorithms-and-Collections---Funko-App\Debug\FunkoApp.exe

@@ -1,5 +1,4 @@
 #include "registeredUser.h"
-#include "loginManager.h"
 
 void registeredUser::login()
 {
@@ -11,11 +10,11 @@ void registeredUser::login()
 		cout << "Password: ";
 		cin >> password_Attempted;
 
-		int userNameID = checkFile(userName_Attempted, "../userNameDatabase.txt");
+		int userNameID = parseFile(userName_Attempted, "../userNameDatabase.txt");
 
 		if (userNameID != 0)
 		{
-			int passwordID = checkFile(password_Attempted, "../passwordDatabase.txt");
+			int passwordID = parseFile(password_Attempted, "../passwordDatabase.txt");
 			if (userNameID == passwordID)
 			{
 				cout << "Welcome " << userName_Attempted << "\n";

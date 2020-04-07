@@ -21,16 +21,13 @@
     <ClInclude Include="user.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="loginManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="registeredUser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="guestUser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="encryptionCheckFile.h">
+    <ClInclude Include="encryptionParse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,16 +41,13 @@
     <ClCompile Include="user.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="loginManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="registeredUser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="guestUser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="encryptionCheckFile.cpp">
+    <ClCompile Include="encryptionParse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
