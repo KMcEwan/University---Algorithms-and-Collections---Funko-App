@@ -4,11 +4,11 @@ void user::searchPopByName(hashTable& hash)
 {
 	string name = "";
 	bool searchAgainName = true;
-	char searchInputName = ' ';
+	char searchInputName = ' ';																							// prompted input - for if wish to search again
 	bool firstCheck = false;
 	while (searchAgainName == true)
 	{	
-		if(firstCheck == 1)																							// Needed to ignore for first run.  
+		if(firstCheck == 1)																								// Needed to ignore for first run.  
 		{
 			cin.ignore(9999, '\n');																							
 		}
@@ -28,7 +28,7 @@ void user::searchPopByName(hashTable& hash)
 			hash.searchForPop(name);
 		}
 
-		while (searchInputName != 'N' || searchInputName != 'Y')
+		while (searchInputName != 'N' || searchInputName != 'Y')														// Search again prompt
 		{			
 			cout << "Search again? Y / N " << endl;
 			cin >> searchInputName;
@@ -61,8 +61,8 @@ void user::searchPopByTag(hashTable& hash)
 {
 	string tag = "";
 	bool searchAgainTag = true;
-	char searchInputTag = ' ';
-	bool firstCheck = false;
+	char searchInputTag = ' ';																								// prompted input - for if wish to search again
+	bool firstCheck = false;																
 	while (searchAgainTag == true)
 	{
 		if (firstCheck == 1)																							
@@ -78,37 +78,12 @@ void user::searchPopByTag(hashTable& hash)
 			c = ::toupper(c);
 		});
 
-
 		if (tag != "")
 		{
 			hash.searchByTag(tag);
 		}
 
-		/*cout << "Search again? Y / N \n";
-		char searchInputTag;
-		cin >> searchInputTag;
-		cin.clear();
-		cout << "\n";
-		searchInputTag = toupper(searchInputTag);
-
-		if (searchInputTag == 'Y')
-		{
-			searchAgainTag = true;
-		}
-		else if (searchInputTag == 'N')
-		{
-			searchAgainTag = false;
-			break;
-		}
-		else
-		{
-			cout << "Invalid input.\n\n";
-			cin.clear();
-			cin.ignore(9999, '\n');
-			break;
-		}*/
-
-		while (searchInputTag != 'N' || searchInputTag != 'Y')
+		while (searchInputTag != 'N' || searchInputTag != 'Y')																// Search again prompt
 		{
 			cout << "Search again? Y / N " << endl;
 			cin >> searchInputTag;

@@ -44,14 +44,14 @@ void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, regis
 		regUser.login();
 		guestMenu(userSystem, hash, guestSystem, regUser);
 		break;
-
+	
 	case 3:
 		cin.clear();
 		cin.ignore(9999, '\n');
 		regUser.login();
 		guestMenu(userSystem, hash, guestSystem, regUser);
 		break;
-
+		
 	default:				
 		cout << "Invalid selection\n";
 		cin.clear();

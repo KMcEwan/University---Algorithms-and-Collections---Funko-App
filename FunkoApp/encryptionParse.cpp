@@ -3,13 +3,13 @@
 
 // Encryption of username and password
 long long encrypted(int letter)
-{
-	return powf(letter, 2) * 9 - 18;																			
+{		
+	return powf(letter, 2) * 190 * 118;
 }
 //Decrytion of username & password
 int decrypted(long long letter)
-{
-	return powf((letter + 18) / 9, 1 / 2.0f);
+{	
+	return powf((letter / 118) / 190, 1 / 2.0f);
 }
 
 // Parse the file for username and password
