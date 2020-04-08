@@ -28,61 +28,40 @@ void user::searchPopByName(hashTable& hash)
 			hash.searchForPop(name);
 		}
 
-		/*cout << "Search again? Y / N " << endl;
-		char searchInputName;
-		cin >> searchInputName;
-		cout << "\n";
-		searchInputName = toupper(searchInputName);
-
-		if (searchInputName == 'Y')
-		{
-			searchAgainName == true;
-		}
-		else if (searchInputName == 'N')
+		while (searchInputName != 'N' || searchInputName != 'Y')
 		{			
-			searchAgainName == false;
-			break;
-		}
-		else */
-		{			
-			//cout << "Invalid input.\n\n";
-			////cin >> searchInputName;
-			//cin.clear();
-			//cin.ignore(9999, '\n');
-			//break;
-			while (searchInputName != 'N' || searchInputName != 'Y')
-			{			
-				cout << "Search again? Y / N " << endl;
-				cin >> searchInputName;
+			cout << "Search again? Y / N " << endl;
+			cin >> searchInputName;
 						
-				cout << "\n";
-				searchInputName = toupper(searchInputName);
+			cout << "\n";
+			searchInputName = toupper(searchInputName);
 
-				if (searchInputName == 'Y')
-				{
-					searchAgainName = true;		
-					break;
-				}
-				else if (searchInputName == 'N')
-				{
-					searchAgainName = false;
-					break;
-				}
-				else
-				{
-					cout << "Invalid input. ";
-					cin.clear();
-					cin.ignore(9999, '\n');
-				}
+			if (searchInputName == 'Y')
+			{
+				searchAgainName = true;		
+				break;
+			}
+			else if (searchInputName == 'N')
+			{
+				searchAgainName = false;
+				break;
+			}
+			else
+			{
+				cout << "Invalid input. ";
+				cin.clear();
+				cin.ignore(9999, '\n');
 			}
 		}
 	}
 }
 
+
 void user::searchPopByTag(hashTable& hash)
 {
 	string tag = "";
 	bool searchAgainTag = true;
+	char searchInputTag = ' ';
 	bool firstCheck = false;
 	while (searchAgainTag == true)
 	{
@@ -105,7 +84,7 @@ void user::searchPopByTag(hashTable& hash)
 			hash.searchByTag(tag);
 		}
 
-		cout << "Search again? Y / N \n";
+		/*cout << "Search again? Y / N \n";
 		char searchInputTag;
 		cin >> searchInputTag;
 		cin.clear();
@@ -127,6 +106,32 @@ void user::searchPopByTag(hashTable& hash)
 			cin.clear();
 			cin.ignore(9999, '\n');
 			break;
+		}*/
+
+		while (searchInputTag != 'N' || searchInputTag != 'Y')
+		{
+			cout << "Search again? Y / N " << endl;
+			cin >> searchInputTag;
+
+			cout << "\n";
+			searchInputTag = toupper(searchInputTag);
+
+			if (searchInputTag == 'Y')
+			{
+				searchAgainTag = true;
+				break;
+			}
+			else if (searchInputTag == 'N')
+			{
+				searchAgainTag = false;
+				break;
+			}
+			else
+			{
+				cout << "Invalid input. ";
+				cin.clear();
+				cin.ignore(9999, '\n');
+			}
 		}
 	}
 }
