@@ -2,6 +2,8 @@
 #include <iostream>
 #include "user.h"
 #include "encryptionParse.h"
+#include <conio.h>
+#include <string>
 
 using namespace std;
 

@@ -1,2 +1,14 @@
-﻿  registeredUser.cpp
-  FunkoApp.vcxproj -> C:\Users\k_mce\Documents\Uni\3rd Year\AlgorithmsAndCollections\CourseWork\University---Algorithms-and-Collections---Funko-App\Debug\FunkoApp.exe
+﻿  guestUser.cpp
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\guestuser.cpp(45): warning C4018: '<': signed/unsigned mismatch
+  registeredUser.cpp
+  Compiling...
+  Generating Code...
+  FunkoApp.vcxproj -> E:\users\k_mce\Uni\3rd year\AlgorithmsAndCollections\CourseWork\University---Algorithms-and-Collections---Funko-App\Debug\FunkoApp.exe
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptionparse.cpp(7): warning C26451: Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptionparse.cpp(7): warning C26451: Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptionparse.cpp(7): warning C26451: Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\registereduser.h(13): warning C26495: Variable 'registeredUser::exitLogin' is uninitialized. Always initialize a member variable (type.6).
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\registereduser.cpp(33): warning C6289: Incorrect operator:  mutual exclusion over || is always a non-zero constant.  Did you intend to use && instead?
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\registereduser.cpp(58): warning C6289: Incorrect operator:  mutual exclusion over || is always a non-zero constant.  Did you intend to use && instead?
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(31): warning C6289: Incorrect operator:  mutual exclusion over || is always a non-zero constant.  Did you intend to use && instead?
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\user.cpp(86): warning C6289: Incorrect operator:  mutual exclusion over || is always a non-zero constant.  Did you intend to use && instead?

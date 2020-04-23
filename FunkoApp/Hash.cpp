@@ -8,7 +8,7 @@ hashTable::hashTable()
 	table = new hashNode * [TABLE_SIZE];
 	for (int i = 0; i < TABLE_SIZE; i++)
 	{
-		table[i] = NULL;
+		table[i] = NULL;		
 	}
 		
 	ifstream popData;

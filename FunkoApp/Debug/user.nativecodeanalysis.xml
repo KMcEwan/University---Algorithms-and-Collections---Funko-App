@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp</FILEPATH>
+      <FILENAME>user.cpp</FILENAME>
+      <LINE>31</LINE>
+      <COLUMN>32</COLUMN>
+    </SFA>
+    <DEFECTCODE>6289</DEFECTCODE>
+    <DESCRIPTION>Incorrect operator:  mutual exclusion over || is always a non-zero constant.  Did you intend to use &amp;&amp; instead?</DESCRIPTION>
+    <FUNCTION>user::searchPopByName</FUNCTION>
+    <DECORATED>?searchPopByName@user@@QAEXAAVhashTable@@@Z</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp</FILEPATH>
+      <FILENAME>user.cpp</FILENAME>
+      <LINE>86</LINE>
+      <COLUMN>31</COLUMN>
+    </SFA>
+    <DEFECTCODE>6289</DEFECTCODE>
+    <DESCRIPTION>Incorrect operator:  mutual exclusion over || is always a non-zero constant.  Did you intend to use &amp;&amp; instead?</DESCRIPTION>
+    <FUNCTION>user::searchPopByTag</FUNCTION>
+    <DECORATED>?searchPopByTag@user@@QAEXAAVhashTable@@@Z</DECORATED>
+    <FUNCLINE>60</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

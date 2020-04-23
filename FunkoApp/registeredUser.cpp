@@ -7,9 +7,17 @@ void registeredUser::login()
 		cout << "Please enter your username and password\n";
 		cout << "Username: ";
 		cin >> userName_Attempted;
+		char astSymbol;																												// * symbol for password entry
 		cout << "Password: ";
-		cin >> password_Attempted;
-
+		astSymbol = _getch();
+		while (astSymbol != 13)
+		{
+			password_Attempted.push_back(astSymbol);
+			cout << '*';
+			astSymbol = _getch();
+		}
+		cout << "\n";
+	
 		int userNameID = parseFile(userName_Attempted, "../userNameDatabase.txt");
 
 		if (userNameID != 0)

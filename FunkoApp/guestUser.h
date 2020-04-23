@@ -3,6 +3,8 @@
 #include "user.h"
 #include "registeredUser.h"
 #include "encryptionParse.h"
+#include <conio.h>
+#include <string>
 
 using namespace std;
 

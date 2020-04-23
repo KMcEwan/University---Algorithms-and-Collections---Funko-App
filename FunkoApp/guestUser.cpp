@@ -1,11 +1,22 @@
 #include "guestUser.h"
 
+
 void guestUser::createAccount()
 {
 	string userName, password;
-	cout << "Create a username and password\n";
-	cin >> userName >> password;
+	cout << "Create a username \n";
+	cin >> userName;
 
+	char astSymbol;																																	// * symbol for password entry
+	cout << "Enter password\n";
+	astSymbol = _getch();	
+	while (astSymbol != 13)
+	{
+		password.push_back(astSymbol);
+		cout << '*';
+		astSymbol = _getch();
+	}
+	cout << "\n";
 
 	if (parseFile(userName, "../userNameDatabase.txt") != 0)
 	{
