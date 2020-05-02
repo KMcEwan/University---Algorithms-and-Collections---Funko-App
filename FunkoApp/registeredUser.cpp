@@ -2,7 +2,7 @@
 
 void registeredUser::login()
 {
-	if (loggedIn == false)
+	if (loggedIn == false)																											// Checks if user is already logged in
 	{
 		cout << "Please enter your username and password\n";
 		cout << "Username: ";
@@ -30,9 +30,9 @@ void registeredUser::login()
 			}
 			else
 			{																											
-				while (exitLogin != 'Y' || exitLogin != 'N' || exitLogin != 'n' || exitLogin != 'y')								// Invalid password
+				while (exitLogin != 'Y' || exitLogin != 'N' || exitLogin != 'n' || exitLogin != 'y')									// Invalid password
 				{	
-					cout << "Loin failed, Would you like to try again? Y / N \n";
+					cout << "Login failed, Would you like to try again? Y / N \n";
 					cin >> exitLogin;
 
 					if (exitLogin == 'Y' || exitLogin == 'y')
@@ -55,7 +55,7 @@ void registeredUser::login()
 		else
 		{
 			
-			while (exitLogin != 'Y' || exitLogin != 'N' || exitLogin != 'n' || exitLogin != 'y')									//Invalid username
+			while (exitLogin != 'Y' || exitLogin != 'N' || exitLogin != 'n' || exitLogin != 'y')										//Invalid username
 			{
 				cout << "Invalid username, Would you like to try again? Y / N \n";
 				cin >> exitLogin;
@@ -84,7 +84,4 @@ void registeredUser::login()
 	}
 }
 
-void registeredUser::logout()
-{
-	
-}
+

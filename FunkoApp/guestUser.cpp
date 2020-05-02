@@ -20,8 +20,8 @@ void guestUser::createAccount()
 
 	if (parseFile(userName, "../userNameDatabase.txt") != 0)
 	{
-		cout << "That username is not available, please try again\n";
-		return;
+		cout << "That username is not available, please try again ***\n";		
+		createAccount();
 	}
 
 	int id = 1 + getID();
@@ -30,6 +30,8 @@ void guestUser::createAccount()
 
 	cout << "Account created\n";
 }
+
+
 
 void guestUser::saveFile(string line, const char * fileName, const int & id)
 {

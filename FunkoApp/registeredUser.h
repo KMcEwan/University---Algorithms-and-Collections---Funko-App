@@ -13,9 +13,9 @@ public:
 	registeredUser()
 	{
 		loggedIn = 0;
+		exitLogin = 'N';
 	}
 	void login();
-	void logout();
 
 private:
 	bool loggedIn;

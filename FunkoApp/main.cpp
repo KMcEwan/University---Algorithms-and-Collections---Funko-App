@@ -20,7 +20,7 @@ int main()
 
 void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, registeredUser regUser)
 {
-	cout << "Welcome to The Funko Pop Finder \n\n";
+	cout << "\n\nWelcome to The Funko Pop Finder \n\n";
 
 	int menuSelect;
 	cout << "1: Use as guest\n";

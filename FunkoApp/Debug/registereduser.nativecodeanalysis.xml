@@ -3,20 +3,6 @@
   <DEFECT>
     <SFA>
       <FILEPATH>e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp</FILEPATH>
-      <FILENAME>registereduser.h</FILENAME>
-      <LINE>13</LINE>
-      <COLUMN>1</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'registeredUser::exitLogin' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>registeredUser::{ctor}</FUNCTION>
-    <DECORATED>??0registeredUser@@QAE@XZ</DECORATED>
-    <FUNCLINE>13</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp</FILEPATH>
       <FILENAME>registereduser.cpp</FILENAME>
       <LINE>33</LINE>
       <COLUMN>28</COLUMN>
