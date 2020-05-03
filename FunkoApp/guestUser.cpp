@@ -3,32 +3,52 @@
 
 void guestUser::createAccount()
 {
-	string userName, password;
+	password = "password";
+	passwordConfirmation = "passwordConfirmation";
 	cout << "Create a username \n";
 	cin >> userName;
 
-	char astSymbol;																																	// * symbol for password entry
-	cout << "Enter password\n";
-	astSymbol = _getch();	
-	while (astSymbol != 13)
+	while (parseFile(userName, "../userNameDatabase.txt") != 0)
 	{
-		password.push_back(astSymbol);
-		cout << '*';
-		astSymbol = _getch();
+		cout << "Sorry, that username is unavailable, please try again with a different username\n";
+		cin >> userName;
 	}
-	cout << "\n";
 
-	if (parseFile(userName, "../userNameDatabase.txt") != 0)
+	char astSymbol;																																	// * symbol for password entry
+	while (password != passwordConfirmation)
 	{
-		cout << "That username is not available, please try again ***\n";		
-		createAccount();
+		password = "";																																//Clear previous entries 
+		passwordConfirmation = "";
+		cout << "Enter password\n";
+		astSymbol = _getch();
+		while (astSymbol != 13)
+		{
+			password.push_back(astSymbol);
+			cout << '*';
+			astSymbol = _getch();
+		}
+
+		cout << "\nPassword confirmation - re-enter password\n";
+		astSymbol = _getch();
+		while (astSymbol != 13)
+		{
+			passwordConfirmation.push_back(astSymbol);
+			cout << '*';
+			astSymbol = _getch();
+		}
+		cout << "\n";
+		if (password != passwordConfirmation)
+		{
+			cout << "\nPasswords do not match, try again\n";
+		}		
 	}
+			
 
 	int id = 1 + getID();
 	saveFile(userName, "../userNameDatabase.txt", id);
 	saveFile(password, "../passwordDatabase.txt", id);
 
-	cout << "Account created\n";
+	cout << "Account created. Welcome to the Funko Pop Finder\n" << endl;
 }
 
 

@@ -25,7 +25,7 @@ void menuSelection(user userSystem, hashTable hash, guestUser guestSystem, regis
 	int menuSelect;
 	cout << "1: Use as guest\n";
 	cout << "2: Create an account\n";
-	cout << "3: Login\n";
+	cout << "3: Login\n\n";
 
 	cin >> menuSelect;
 	cout << "\n";

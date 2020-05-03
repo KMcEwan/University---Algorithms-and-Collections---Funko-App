@@ -15,5 +15,8 @@ public:
 	void saveFile(string line, const char* fileName, const int& id);
 	int getID();
 private:
+	string userName = "userName";
+	string password = "password";
+	string passwordConfirmation = "passwordConfirmation";
 
 };

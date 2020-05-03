@@ -4,7 +4,7 @@ void registeredUser::login()
 {
 	if (loggedIn == false)																											// Checks if user is already logged in
 	{
-		cout << "Please enter your username and password\n";
+		cout << "Please enter your username and password to login\n";
 		cout << "Username: ";
 		cin >> userName_Attempted;
 		char astSymbol;																												// * symbol for password entry

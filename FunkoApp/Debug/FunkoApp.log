@@ -1,8 +1,8 @@
-﻿  encryptionParse.cpp
-e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptionparse.cpp(7): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptionparse.cpp(7): warning C4244: 'return': conversion from 'float' to '__int64', possible loss of data
-e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptionparse.cpp(12): warning C4244: 'argument': conversion from '__int64' to 'float', possible loss of data
-e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptionparse.cpp(12): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+﻿  guestUser.cpp
+e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\guestuser.cpp(67): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  Compiling...
+  Generating Code...
   FunkoApp.vcxproj -> E:\users\k_mce\Uni\3rd year\AlgorithmsAndCollections\CourseWork\University---Algorithms-and-Collections---Funko-App\Debug\FunkoApp.exe
 e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptionparse.cpp(7): warning C26451: Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).
 e:\users\k_mce\uni\3rd year\algorithmsandcollections\coursework\university---algorithms-and-collections---funko-app\funkoapp\encryptionparse.cpp(7): warning C26451: Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).
