@@ -2,85 +2,79 @@
 
 void registeredUser::login()
 {
-	if (loggedIn == false)																											// Checks if user is already logged in
+	if (loggedIn == true)																													// Checks if user is already logged in
 	{
-		cout << "Please enter your username and password to login\n";
-		cout << "Username: ";
-		cin >> userName_Attempted;
-		char astSymbol;																												// * symbol for password entry
-		cout << "Password: ";
-		astSymbol = _getch();
-		while (astSymbol != 13)
+		cout << "You are already logged in as " << userNameAttempted << "\n\n";
+	}
+	else																								
+	{
+		int userNameID = 0;
+		while (userNameID == 0)
 		{
-			password_Attempted.push_back(astSymbol);
-			cout << '*';
-			astSymbol = _getch();
-		}
-		cout << "\n";
-	
-		int userNameID = parseFile(userName_Attempted, "../userNameDatabase.txt");
-
-		if (userNameID != 0)
-		{
-			int passwordID = parseFile(password_Attempted, "../passwordDatabase.txt");
-			if (userNameID == passwordID)
+			cout << "Please enter your username and password to login\n";
+			cout << "Username: ";
+			cin >> userNameAttempted;
+			int userNameID = parseFile(userNameAttempted, "../userNameDatabase.txt");
+			while (userNameID != 0)
 			{
-				cout << "\nYou have successfully logged in. \n\nWelcome " << userName_Attempted << "\n\n";
-				loggedIn = true;
-			}
-			else
-			{																											
-				while (exitLogin != 'Y' || exitLogin != 'N' || exitLogin != 'n' || exitLogin != 'y')									// Invalid password
-				{	
-					cout << "Login failed, Would you like to try again? Y / N \n";
-					cin >> exitLogin;
-
-					if (exitLogin == 'Y' || exitLogin == 'y')
-					{
-						login();
-					}
-					else if (exitLogin == 'N' || exitLogin == 'n')
-					{
-						break;
-					}
-					else
-					{
-						cout << "Please make a valid selection\n. ";
-						cin.clear();
-						cin.ignore(9999, '\n');
-					}
-				}
-			}
-		}
-		else
-		{
-			
-			while (exitLogin != 'Y' || exitLogin != 'N' || exitLogin != 'n' || exitLogin != 'y')										//Invalid username
-			{
-				cout << "Invalid username, Would you like to try again? Y / N \n";
-				cin >> exitLogin;
-
-				if (exitLogin == 'Y' || exitLogin == 'y')
+				passwordAttempted = "";
+				char astSymbol;																												// astSymbol = * symbol for password entry
+				cout << "Password: ";
+				astSymbol = _getch();
+				while (astSymbol != 13)
 				{
-					login();
+					passwordAttempted.push_back(astSymbol);
+					cout << '*';
+					astSymbol = _getch();
 				}
-				else if (exitLogin == 'N' || exitLogin == 'n')
+				cout << "\n";
+				int passwordID = parseFile(passwordAttempted, "../passwordDatabase.txt");
+				if (userNameID == passwordID)
 				{
-					break;
+					cout << "\nYou have successfully logged in. \n\nWelcome " << userNameAttempted << "\n\n";
+					loggedIn = true;	
+					goto exit;
 				}
 				else
 				{
-					cout << "Please make a valid selection\n. ";
-					cin.clear();
-					cin.ignore(9999, '\n');
+					cout << "Invalid password\n\n";
+					goto tryAgain;
 				}
+
+				if (loggedIn == false)
+				{
+				tryAgain:
+					cout << "Would you like to try to login again? Please enter Y to try again, or any other key to exit \n\n";
+					cin.clear();																												// Clear stream
+					cin.ignore(9999, '\n');
+					cin >> exitAttempt;
+					cout << "\n";
+					exitAttempt = toupper(exitAttempt);
+					if (exitAttempt != 'Y')
+					{					
+						goto exit;
+					}
+				}
+			}	cout << " Invalid username, would you like to try to login again? Please enter Y to try again, or any other key to exit \n\n";
+			cin.clear();																												// Clear stream
+			cin.ignore(9999, '\n');
+			cin >> exitAttempt;
+			cout << "\n";
+			exitAttempt = toupper(exitAttempt);
+			if (exitAttempt != 'Y')
+			{
+				goto exit;
 			}
-					   		
+			
 		}
+
 	}
-	else
+	while (false)																																// While loop only used for the goto exit statement, while loop not actually reached
 	{
-		cout << "You are already logged in " << userName_Attempted << "\n\n";
+	exit:
+		cin.clear();
+		cin.ignore(9999, '\n');
+		break;
 	}
 }
 

@@ -20,6 +20,7 @@ public:
 private:
 	bool loggedIn;
 	char exitLogin;
-	string userName_Attempted;
-	string password_Attempted;
+	string userNameAttempted;
+	string passwordAttempted;
+	char exitAttempt;
 };
