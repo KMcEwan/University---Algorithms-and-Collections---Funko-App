@@ -55,8 +55,8 @@ void registeredUser::login()
 						goto exit;
 					}
 				}
-			}	cout << " Invalid username, would you like to try to login again? Please enter Y to try again, or any other key to exit \n\n";
-			cin.clear();																												// Clear stream
+			}	cout << "Invalid username, would you like to try to login again? Please enter Y to try again, or any other key to exit \n\n";
+			cin.clear();																														// Clear stream
 			cin.ignore(9999, '\n');
 			cin >> exitAttempt;
 			cout << "\n";
