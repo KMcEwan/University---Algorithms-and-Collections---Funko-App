@@ -12,7 +12,7 @@ class registeredUser : public user
 public:
 	registeredUser()
 	{
-		loggedIn = 0;
+		loggedIn = 0;																											
 		exitLogin = 'N';
 	}
 	void login();
